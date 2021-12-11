@@ -1,4 +1,3 @@
-from django.conf.urls import url
 from django.contrib import admin
 from django.urls import include, path
 from drf_info_endpoint.views import info
@@ -18,6 +17,6 @@ urlpatterns = [
         SpectacularSwaggerView.as_view(url_name="schema"),
         name="swagger-ui",
     ),
-    url("info/", info),
-    url("health/", include("drf_health_check.urls")),
+    path("info/", info),
+    path("health/", include("drf_health_check.urls")),
 ]
