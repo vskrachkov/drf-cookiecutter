@@ -23,15 +23,13 @@ drf_spectacular_extensions = "*"
 drf_info_endpoint = "*"
 
 [dev-packages]
-mypy = "==0.910"
+mypy = "==0.982"
 django-stubs = "*"
 djangorestframework-stubs = "*"
-tblib = "*"
 isort = "5.10.1"
-black = "==21.12b0"
+black = "==22.10.0"
 pre-commit = "*"
-bumpversion = "*"
-coverage = "*"
+bump2version = "*"
 
 [requires]
 python_version = "3.10"
