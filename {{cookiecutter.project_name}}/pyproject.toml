@@ -31,10 +31,10 @@ sentry_sdk = "*"
 drf-spectacular = "*"
 django-json-logging = "*"
 django-cors-headers = "*"
-drf-health-check = "*"
 uvicorn = "*"
 drf_spectacular_extensions = "*"
 drf_info_endpoint = "*"
+django-health-check = "^3.17.0"
 
 [tool.poetry.dev-dependencies]
 mypy = "==0.982"

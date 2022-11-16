@@ -25,7 +25,9 @@ BASE_APPS = [
 EXTERNAL_APPS = [
     "drf_spectacular",
     "corsheaders",
-    "drf_health_check",
+    "health_check",
+    "health_check.db",
+    "health_check.contrib.migrations",
 ]
 
 PROJECT_APPS: List[str] = []
@@ -194,8 +196,6 @@ For example:
 
 DRF_INFO_ENDPOINT_PROJECT_NAME = "{{cookiecutter.project_name}}"
 DRF_INFO_ENDPOINT_VERSION = __version__
-
-HEALTH_CHECK_PROVIDERS = {"drf_health_check.providers.DBHealthCheckProvider"}
 
 if env.bool("USE_SENTRY", False) and env.str("SENTRY_DSN", ""):
     import sentry_sdk
