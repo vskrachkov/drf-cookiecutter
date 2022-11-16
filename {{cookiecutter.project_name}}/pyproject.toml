@@ -14,6 +14,7 @@ profile = "black"
 name = "{{cookiecutter.project_name}}"
 version = "0.1.0"
 description = "{{cookiecutter.project_name}}"
+authors = [""]
 readme = "README.md"
 
 [tool.poetry.dependencies]
