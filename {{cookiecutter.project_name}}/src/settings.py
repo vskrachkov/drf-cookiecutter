@@ -197,6 +197,10 @@ For example:
 DRF_INFO_ENDPOINT_PROJECT_NAME = "{{cookiecutter.project_name}}"
 DRF_INFO_ENDPOINT_VERSION = __version__
 
+DJANGO_JSON_LOGGING_SETTINGS = {
+    "MAX_BODY_SIZE": 500,
+}
+
 if env.bool("USE_SENTRY", False) and env.str("SENTRY_DSN", ""):
     import sentry_sdk
     from sentry_sdk.integrations.django import DjangoIntegration
