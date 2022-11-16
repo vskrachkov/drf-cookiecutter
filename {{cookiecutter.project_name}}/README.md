@@ -14,17 +14,22 @@ cp .env.template .env
 
 ### Run migrations
 ```
-./manage.py migrate
+poetry run python manage.py migrate
 ```
 
 ### Run sever
 ```
-./manage.py runserver
+poetry run python manage.py runserver
 ```
 
 ### Run tests
 ```
-./manage.py test
+poetry run python manage.py test
+```
+
+### Create superuser for access to Django Admin
+```
+poetry run python manage.py createsuperuser --username admin --email admin@mail.com
 ```
 
 ### Install pre commit hooks
@@ -34,7 +39,7 @@ pre-commit install
 
 ### Manually run all pre commit hooks
 ```
-pre-commit run --all-files
+poetry run pre-commit run --all-files
 ```
 
 ### Useful links
