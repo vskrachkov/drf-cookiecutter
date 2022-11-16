@@ -3,7 +3,7 @@
 ### Install dependencies
 integration with pycharm https://www.jetbrains.com/help/pycharm/pipenv.html
 ```
-  pipenv install
+  poetry install
 ```
 
 ### Create .env file
