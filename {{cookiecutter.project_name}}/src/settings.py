@@ -176,21 +176,7 @@ SPECTACULAR_SETTINGS: Dict[str, Any] = {
         "drf_spectacular_extensions.postprocessing_hooks.add_servers",
     ],
     "TITLE": "{{cookiecutter.project_name}} API",
-    "DESCRIPTION": """
-## API Overview
-{{cookiecutter.project_name}} provides HTTP based API which you can use with simple HTTP client tools like [cURL](https://curl.se). 
-We will use cURL in all following examples. 
-
-## Date and time format
-{{cookiecutter.project_name}} API accepts `date` and `time` as string formatted according to `ISO 8601` [[wiki](https://en.wikipedia.org/wiki/ISO_8601)].
-For example: 
-``` 
-2020-12-21
-2020-12-21T15:22:22Z
-2020-12-21T12:22:22-03
-2020-12-21T17:22:22+02
-```
-    """,
+    "DESCRIPTION": "{{cookiecutter.project_name}}",
     "VERSION": __version__,
 }
 
