@@ -43,7 +43,7 @@ poetry run pre-commit run --all-files
 ```
 
 ### Useful links
-- `pipenv` for managing project dependencies: https://pipenv-fork.readthedocs.io/
+- `poetry` for managing project dependencies: https://python-poetry.org/
 - `environs` for managing environment variables: https://django-environ.readthedocs.io/en/latest/
 - `pre-commit` for managing git pre-commit hooks: https://pre-commit.com
 - `isort` for sorting python imports: https://pycqa.github.io/isort/
