@@ -15,8 +15,7 @@
 - django-json-logging - various JSON logging extensions for the Django Framework.
 - drf_info_endpoint
 - django-health-check
-- drf_spectacular_extensions 
-- 
+- drf_spectacular_extensions
 - Type hints support with `mypy`, `django-stubs` and `djangorestframework-stubs`.
 - `pre-commit` for managing git pre-commit hooks: https://pre-commit.com
 - `isort` for sorting python imports: https://pycqa.github.io/isort/
