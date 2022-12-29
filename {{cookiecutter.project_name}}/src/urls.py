@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.urls import include, path
-from drf_info_endpoint.views import info
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 from version import __version__
@@ -17,6 +16,5 @@ urlpatterns = [
         SpectacularSwaggerView.as_view(url_name="schema"),
         name="swagger-ui",
     ),
-    path("info/", info),
     path("health/", include('health_check.urls')),
 ]

@@ -15,7 +15,6 @@
 - `django-health-check` - https://github.com/revsys/django-health-check
 - `python-json-logger` - output log data as json objects.
 - `django-cid` - provides a correlation-id (also known as request id) is then available through the Django request/response cycle and may be automatically included in all log messages.
-- drf_info_endpoint
 - drf_spectacular_extensions
 - Type hints support with `mypy`, `django-stubs` and `djangorestframework-stubs`.
 - `pre-commit` for managing git pre-commit hooks: https://pre-commit.com

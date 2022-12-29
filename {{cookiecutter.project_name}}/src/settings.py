@@ -201,9 +201,6 @@ SPECTACULAR_SETTINGS: Dict[str, Any] = {
     "VERSION": __version__,
 }
 
-DRF_INFO_ENDPOINT_PROJECT_NAME = "{{cookiecutter.project_name}}"
-DRF_INFO_ENDPOINT_VERSION = __version__
-
 if env.bool("USE_SENTRY", False) and env.str("SENTRY_DSN", ""):
     import sentry_sdk
     from sentry_sdk.integrations.django import DjangoIntegration
