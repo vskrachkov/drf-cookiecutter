@@ -12,9 +12,9 @@
 - `drf-spectacular` - flexible OpenAPI 3 schema generation for Django REST framework (https://drf-spectacular.readthedocs.io/).
 - `django-cors-headers` - a Django App that adds Cross-Origin Resource Sharing (CORS) headers to responses. This allows in-browser requests to your Django application from other origins (https://github.com/adamchainz/django-cors-headers).
 - `uvicorn` - ASGI server.
+- `django-health-check` - https://github.com/revsys/django-health-check
 - django-json-logging - various JSON logging extensions for the Django Framework.
 - drf_info_endpoint
-- django-health-check
 - drf_spectacular_extensions
 - Type hints support with `mypy`, `django-stubs` and `djangorestframework-stubs`.
 - `pre-commit` for managing git pre-commit hooks: https://pre-commit.com
