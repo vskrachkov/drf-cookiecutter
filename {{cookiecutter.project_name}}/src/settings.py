@@ -1,7 +1,10 @@
+import base64
+import uuid
 from typing import Any, Dict, List
 
 import dj_database_url
 from environs import Env
+
 from version import __version__
 
 env = Env()
@@ -28,6 +31,7 @@ EXTERNAL_APPS = [
     "health_check",
     "health_check.db",
     "health_check.contrib.migrations",
+    "cid.apps.CidAppConfig",
 ]
 
 PROJECT_APPS: List[str] = []
@@ -35,6 +39,7 @@ PROJECT_APPS: List[str] = []
 INSTALLED_APPS = BASE_APPS + EXTERNAL_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
+    "cid.middleware.CidMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -117,15 +122,32 @@ LOGIN_REDIRECT_URL = env.str("LOGIN_REDIRECT_URL", "/admin")
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
-    "filters": {},
+    "filters": {
+        "correlation": {"()": "cid.log.CidContextFilter"},
+    },
     "formatters": {
-        "json": {"()": "django_json_logging.logging.JSONFormatter"},
+        "json": {
+            "()": "pythonjsonlogger.jsonlogger.JsonFormatter",
+            "fmt": "{levelname} {cid} {asctime} {message} {module} {funcName}",
+            "style": "{",
+            "rename_fields": {  # https://www.elastic.co/guide/en/ecs/current/ecs-reference.html
+                "levelname": "log.level",
+                "funcName": "log.origin.function",
+                "module": "log.origin.file.name",
+                "name": "log.logger",
+                "process": "process.pid",
+                "processName": "process.name",
+                "thread": "process.thread.id",
+                "threadName": "process.thread.name",
+            },
+        },
     },
     "handlers": {
         "default": {
             "class": "logging.StreamHandler",
             "level": "INFO",
             "formatter": "json",
+            "filters": ["correlation"],
         },
     },
     "loggers": {
@@ -197,3 +219,10 @@ if env.bool("USE_SENTRY", False) and env.str("SENTRY_DSN", ""):
     )
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
+
+CID_GENERATE = True
+CID_GENERATOR = (
+    lambda: base64.urlsafe_b64encode(uuid.uuid4().bytes).rstrip(b"=").decode("ascii")
+)
+CID_HEADER = "HTTP_X_CORRELATION_ID"
+CID_RESPONSE_HEADER = "X-Correlation-Id"

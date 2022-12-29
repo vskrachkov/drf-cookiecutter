@@ -35,6 +35,8 @@ uvicorn = "*"
 drf_spectacular_extensions = "*"
 drf_info_endpoint = "*"
 django-health-check = "^3.17.0"
+python-json-logger = "^2.0.4"
+django-cid = "^2.3"
 
 [tool.poetry.dev-dependencies]
 mypy = "==0.982"
